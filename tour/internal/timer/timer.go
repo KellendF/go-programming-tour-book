@@ -1,10 +1,11 @@
-package time
+package timer
 
 import "time"
 
 // 获取当前时间
 func GetNowTime() time.Time {
-	return time.Now()
+	localtion, _ := time.LoadLocation("Asia/Shanghai")
+	return time.Now().In(localtion)
 }
 
 // 时间推算
